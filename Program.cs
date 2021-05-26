@@ -17,10 +17,10 @@ namespace Quest
             Challenge theAnswer = new Challenge(
                 "What's the answer to life, the universe and everything?", 42, 25);
             Challenge whatSecond = new Challenge(
-                "What is the current second?", DateTime.Now.Second, 50);
+                $"What is the current second? (it's {DateTime.Now.Second})", DateTime.Now.Second, 50);
 
             int randomNumber = new Random().Next() % 10;
-            Challenge guessRandom = new Challenge("What number am I thinking of?", randomNumber, 25);
+            Challenge guessRandom = new Challenge($"What number am I thinking of? (it's {randomNumber})", randomNumber, 25);
 
             Challenge favoriteBeatle = new Challenge(
                 @"Who's your favorite Beatle?
@@ -44,8 +44,31 @@ namespace Quest
             // Make a new "Adventurer" object using the "Adventurer" class
             Console.WriteLine("What is your name peasant?");
             string AdName = Console.ReadLine();
+            Console.WriteLine($"{AdName} is the best your parents could come up with? I guess I'll let it slide but grow a better imagination");
+            Console.WriteLine("===========================================================================================================");
             Adventurer theAdventurer = new Adventurer(AdName);
+            Robe AdRobe = new Robe();
+            while (true)
+            {
+                Console.WriteLine("What color would you like on your robe?");
+                string aColor = Console.ReadLine();
 
+                AdRobe.Colors.Add(aColor);
+
+                Console.WriteLine("Do you REALLY want to add another color? (Y/N)");
+                string moreColors = Console.ReadLine().ToLower();
+                while (moreColors != "y" && moreColors != "n")
+                {
+                    Console.WriteLine("Do you REALLY want to add another color? (Y/N)");
+                    moreColors = Console.ReadLine().ToLower();
+                }
+                if (moreColors == "n")
+                {
+                    break;
+                }
+
+
+            }
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
             List<Challenge> challenges = new List<Challenge>()
