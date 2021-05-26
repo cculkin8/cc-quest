@@ -48,9 +48,10 @@ namespace Quest
 
             Robe AdRobe = new Robe();
             Hat AdHat = new Hat();
-            {
+            { 
                 AdHat.ShininessLevel = new Random().Next(12);
             }
+            Prize ABadPrize = new Prize ("this mug I have sitting next to my mouse");
             while (true)
             {
                 Console.WriteLine("What color would you like on your robe?");
@@ -111,6 +112,8 @@ namespace Quest
             {
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
             }
+            Console.WriteLine(ABadPrize.ShowPrize(theAdventurer));
+            Thread.Sleep(3000);
         }
         static void Main(string[] args){
             DefinitelyNotMain();
