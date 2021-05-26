@@ -7,8 +7,7 @@ namespace Quest
 {
     class Program
     {
-        static void Main(string[] args)
-        {
+        static void DefinitelyNotMain()        {
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
             //   the text of the challenge
@@ -63,7 +62,7 @@ namespace Quest
             {
                 challenge.RunChallenge(theAdventurer);
             }
-
+            
             // This code examines how Awesome the Adventurer is after completing the challenges
             // And praises or humiliates them accordingly
             if (theAdventurer.Awesomeness >= maxAwesomeness)
@@ -79,5 +78,23 @@ namespace Quest
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
             }
         }
+        static void Main(string[] args){
+            DefinitelyNotMain();
+            Console.WriteLine("Would you like to continue? (Y/N):" );
+            string reply = Console.ReadLine().ToLower();
+           while (reply != "y" && reply != "n")
+         {
+           Console.Write("Would you like to continue? (Y/N):" );
+           reply = Console.ReadLine().ToLower();
+        }
+         if (reply == "y")
+        {
+          DefinitelyNotMain();
+         }
+         else
+         {
+         Console.WriteLine("You're just a sore loser then aren't you?");
+         }
+    }
     }
 }
