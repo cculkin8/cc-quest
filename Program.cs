@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading;
 // Every class in the program is defined within the "Quest" namespace
 // Classes within the same namespace refer to one another without a "using" statement
 namespace Quest
@@ -41,20 +41,21 @@ namespace Quest
             int minAwesomeness = 0;
             int maxAwesomeness = 100;
 
-            // Make a new "Adventurer" object using the "Adventurer" class
             Console.WriteLine("What is your name peasant?");
             string AdName = Console.ReadLine();
             Console.WriteLine($"{AdName} is the best your parents could come up with? I guess I'll let it slide but grow a better imagination");
             Console.WriteLine("===========================================================================================================");
-            Adventurer theAdventurer = new Adventurer(AdName);
+
             Robe AdRobe = new Robe();
+            Hat AdHat = new Hat();
+            {
+                AdHat.ShininessLevel = new Random().Next(12);
+            }
             while (true)
             {
                 Console.WriteLine("What color would you like on your robe?");
-                string aColor = Console.ReadLine();
-
-                AdRobe.Colors.Add(aColor);
-
+                string singeColor = Console.ReadLine();
+                AdRobe.Colors.Add(singeColor);
                 Console.WriteLine("Do you REALLY want to add another color? (Y/N)");
                 string moreColors = Console.ReadLine().ToLower();
                 while (moreColors != "y" && moreColors != "n")
@@ -69,6 +70,16 @@ namespace Quest
 
 
             }
+            // Make a new "Adventurer" object using the "Adventurer" class
+            Adventurer theAdventurer = new Adventurer(AdName, AdRobe, AdHat);
+            Console.Clear();
+            Console.WriteLine("Let me put my glasses on so I can take a good look at you, one sec.");
+            Thread.Sleep(2000);
+            Console.WriteLine(theAdventurer.GetDescription());
+            Thread.Sleep(4000);
+            Console.WriteLine("Now answer these questions");
+            Console.WriteLine("===============================================================================================================");
+
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
             List<Challenge> challenges = new List<Challenge>()
