@@ -1,0 +1,16 @@
+C:\Users\carte\workspace\cc-quest\bin\Debug\net5.0\cc-quest.exe
+C:\Users\carte\workspace\cc-quest\bin\Debug\net5.0\cc-quest.deps.json
+C:\Users\carte\workspace\cc-quest\bin\Debug\net5.0\cc-quest.runtimeconfig.json
+C:\Users\carte\workspace\cc-quest\bin\Debug\net5.0\cc-quest.runtimeconfig.dev.json
+C:\Users\carte\workspace\cc-quest\bin\Debug\net5.0\cc-quest.dll
+C:\Users\carte\workspace\cc-quest\bin\Debug\net5.0\ref\cc-quest.dll
+C:\Users\carte\workspace\cc-quest\bin\Debug\net5.0\cc-quest.pdb
+C:\Users\carte\workspace\cc-quest\obj\Debug\net5.0\cc-quest.csprojAssemblyReference.cache
+C:\Users\carte\workspace\cc-quest\obj\Debug\net5.0\cc-quest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carte\workspace\cc-quest\obj\Debug\net5.0\cc-quest.AssemblyInfoInputs.cache
+C:\Users\carte\workspace\cc-quest\obj\Debug\net5.0\cc-quest.AssemblyInfo.cs
+C:\Users\carte\workspace\cc-quest\obj\Debug\net5.0\cc-quest.csproj.CoreCompileInputs.cache
+C:\Users\carte\workspace\cc-quest\obj\Debug\net5.0\cc-quest.dll
+C:\Users\carte\workspace\cc-quest\obj\Debug\net5.0\ref\cc-quest.dll
+C:\Users\carte\workspace\cc-quest\obj\Debug\net5.0\cc-quest.pdb
+C:\Users\carte\workspace\cc-quest\obj\Debug\net5.0\cc-quest.genruntimeconfig.cache
