@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Linq;
 // Every class in the program is defined within the "Quest" namespace
 // Classes within the same namespace refer to one another without a "using" statement
 namespace Quest
@@ -31,6 +32,27 @@ namespace Quest
 ",
                 4, 20
             );
+            Challenge dumbQuestion1 = new Challenge(
+                @"Why did Carter Culkin join NSS
+    1) Out of moral obligation
+    2) Because he wanted to start a new career path
+    3) Because he got tired of the automotive industry
+    4) To make money
+    5) All of the above
+                  ", 
+                  5, 10);
+            Challenge dumbQuestion2 = new Challenge(
+                @"Who is the best Dark Souls summon here?
+    1) Black Iron Tarkus
+    2) Manscorpian Tark
+    3) Knight Slayer Tsorig
+                ",
+                1,100
+            );
+                Challenge dumbQuestion3 = new Challenge(
+                "What is the airspeed velocity of an unladen swallow? (In miles per hour)",
+                25,25
+            );
 
             // "Awesomeness" is like our Adventurer's current "score"
             // A higher Awesomeness is better
@@ -39,7 +61,7 @@ namespace Quest
             //  If an Adventurer has an Awesomeness greater than the max, they are truly awesome
             //  If an Adventurer has an Awesomeness less than the min, they are terrible
             int minAwesomeness = 0;
-            int maxAwesomeness = 100;
+            int maxAwesomeness = 200;
 
             Console.WriteLine("What is your name peasant?");
             string AdName = Console.ReadLine();
@@ -83,19 +105,34 @@ namespace Quest
 
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
-            List<Challenge> challenges = new List<Challenge>()
+            int randomInt()
             {
-                twoPlusTwo,
-                theAnswer,
-                whatSecond,
-                guessRandom,
-                favoriteBeatle
-            };
+                int i = new Random().Next() % 10;
+                return i;
+            }
+            Dictionary<Challenge, int> challenges = new Dictionary<Challenge, int>();
+                challenges.Add(twoPlusTwo, randomInt());
+                challenges.Add(theAnswer, randomInt());
+                challenges.Add(whatSecond, randomInt());
+                challenges.Add(guessRandom, randomInt());
+                challenges.Add(favoriteBeatle, randomInt());
+                challenges.Add(dumbQuestion1, randomInt());
+                challenges.Add(dumbQuestion2, randomInt());
+                challenges.Add(dumbQuestion3, randomInt());
+
+                var sorted = from pair in challenges
+                orderby pair.Value descending
+                select pair;
+                int i =0;
 
             // Loop through all the challenges and subject the Adventurer to them
-            foreach (Challenge challenge in challenges)
+            foreach (var challenge in sorted)
             {
-                challenge.RunChallenge(theAdventurer);
+                if (i<6)
+                {
+                    challenge.Key.RunChallenge(theAdventurer);
+                }
+                i++;
             }
             
             // This code examines how Awesome the Adventurer is after completing the challenges
